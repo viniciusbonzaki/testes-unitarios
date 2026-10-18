@@ -1,6 +1,7 @@
 package com.javanauta.cadastrousuario.api.request;
 
-import com.javanauta.cadastrousuario.api.request.EnderecoRequestDTO;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.*;
 
 @Getter
@@ -8,15 +9,11 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UsuarioRequestDTO {
-
+@EqualsAndHashCode
+public class UsuarioDTORequest {
     private String nome;
-
+    @JsonProperty(required = true)
     private String email;
-
     private String documento;
-
-    private EnderecoRequestDTO endereco;
-
-
+    private EnderecoDTORequest endereco;
 }
