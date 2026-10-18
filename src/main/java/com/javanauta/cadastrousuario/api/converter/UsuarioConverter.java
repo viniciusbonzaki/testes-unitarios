@@ -41,5 +41,4 @@ public class UsuarioConverter {
                 .complemento(enderecoDTO.getComplemento())
                 .build();
     }
-
 }
