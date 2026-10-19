@@ -24,7 +24,6 @@ public class UsuarioService {
     private final UsuarioUpdateMapper usuarioUpdateMapper;
     private final UsuarioMapper usuarioMapper;
 
-
     public Usuario salvaUsuario(Usuario usuario) {
         return usuarioRepository.saveAndFlush(usuario);
     }
@@ -46,7 +45,7 @@ public class UsuarioService {
             Usuario entity = usuarioUpdateMapper.updateUsuarioFromDTO(usuarioDTORequest, usuario);
             return usuarioMapper.paraUsuarioResponseDTO(salvaUsuario(entity));
         } catch (Exception e) {
-            throw new BusinessException("Erro ao gravar dados de usuário", e);
+            throw new BusinessException("Erro ao atualizar dados de usuário", e);
         }
     }
 
